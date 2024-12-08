@@ -211,3 +211,24 @@ body {
     background-color: green;
     color: #fff;
 }
+.modify-buttons #add-button {
+    width: 140px;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: 500;
+    background-color: aqua;
+    color: #fff;
+}
+
+.modify-buttons #remove-button {
+    width: 140px;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: 500;
+    background-color: pink;
+    color: #fff;
+}
