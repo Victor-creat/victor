@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img src="${recipe.recipeImage}" class="card-img-top" alt="recipe-image">
                 <div class="card-body">
                     <h5 class="card-title">${recipe.recipeName}</h5>
-                    <a href="/recipe.html" class="read-more" data-recipe-id="${recipe.id}">Read More</a>
+                    <a href="" class="read-more" data-recipe-id="${recipe.id}">Read More</a>
                 </div>
             `;
   
