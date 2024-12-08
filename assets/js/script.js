@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let recipes = [
         {
             id: 1,
-            recipeName: "Strawberry Cream Cake",
+            recipeName: "Strawberry Cream Cheese Cake",
             recipeImage: "./assets/images/strawberry-short-cake.jpg",
             recipeIngredient: [
                 "200g graham crackers",
@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
           id: 2,
-          recipeName: "Strawberry Cream Cake",
-          recipeImage: "./assets/images/strawberry-short-cake.jpg",
+          recipeName: "Carrot whipped Cream Cake",
+          recipeImage: "./assets/images/carrot-cake.png",
           recipeIngredient: [
             "200g graham crackers",
             "100g unsalted butter, melted",
@@ -49,8 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
           id: 3,
-          recipeName: "Strawberry Cream Cake",
-          recipeImage: "./assets/images/strawberry-short-cake.jpg",
+          recipeName: "Blueberry Whipped Cake",
+          recipeImage: "./assets/images/blueberry-cake.png",
           recipeIngredient: [
             "200g graham crackers",
             "100g unsalted butter, melted",
@@ -73,8 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
       {
         id: 4,
-        recipeName: "Strawberry Cream Cake",
-        recipeImage: "./assets/images/strawberry-short-cake.jpg",
+        recipeName: "Chocolate Whipped Cake",
+        recipeImage: "./assets/images/chocolate-cake.png",
         recipeIngredient: [
           "200g graham crackers",
           "100g unsalted butter, melted",
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img src="${recipe.recipeImage}" class="card-img-top" alt="recipe-image">
                 <div class="card-body">
                     <h5 class="card-title">${recipe.recipeName}</h5>
-                    <a href="javascript:void(0);" class="read-more" data-recipe-id="${recipe.id}">Read More</a>
+                    <a href="/recipe.html" class="read-more" data-recipe-id="${recipe.id}">Read More</a>
                 </div>
             `;
   
