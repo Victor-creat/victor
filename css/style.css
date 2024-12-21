@@ -1,0 +1,714 @@
+/*-----------------------------------*\
+  #style.css
+\*-----------------------------------*/
+
+
+:root {
+
+    /**
+     * colors
+     */
+  
+    --light-grayish-blue: hsl(220, 16%, 96%);
+    --very-light-gray: hsl(0, 0%, 98%);
+    --grayish-blue: hsl(233, 8%, 62%);
+    --bright-cyan: hsl(192, 70%, 51%);
+    --lime-green: hsl(136, 65%, 51%);
+    --dark-blue: hsl(233, 26%, 24%);
+    --white: hsl(0, 100%, 100%);
+}
+
+.card{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    color: lightgray;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: rgba(100,100,111,0.2) 0 7px 29px 0;
+    transition: all 1s ease-in-out;
+    cursor: pointer;
+}
+.logo{
+    position: absolute;
+    right: 50%;
+    bottom: 50%;
+    transform: translate(50%, 50%);
+    transition: all 0.6s ease-in-out;
+}
+.logo .logo-svg{
+    fill: white;
+    width: 30px;
+    height: 30px;
+}
+.icon{
+display: inline-block;
+width: 20px;
+height: 20px;
+}
+.icon .svg{
+    fill: white;
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+}
+.box{
+    position: absolute;
+    padding: 10px;
+    text-align: right;
+    background: rgba(255, 255, 255, 0.389);
+    border-top: 2px solid white;
+    border-right: 1px solid right;
+    border-radius: 10% 13% 42% 0%/10% 12% 75% 0%;
+    box-shadow: rgba(100, 100, 111, 0.364) - 7px 7px 29px 0;
+    transform-origin: bottom left;
+    transition: all 1s ease-in-out;
+}
+.box::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+.box:hover .svg{
+    fill: white;
+}
+.box1{
+width: 70%;
+height: 70%;
+bottom: -70%;
+left: -70%;
+background-color: rgba(100, 100, 111, 0.364) - 7px 7px 29px 0;
+}
+.box1::before{
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #ff53d4 60%, #62c2fe 90%);
+}
+.box1:hover::before{
+    opacity: 1;
+}
+.box1:hover .icon.svg{
+    filter: drop-shadow(0 0 5px white);
+}
+.box2{
+    width: 50%;
+    height: 50%;
+    bottom: -50%;
+    left: -50%;
+    transition-delay: 0.2s;
+}
+.box2::before{
+    background: radial-gradient(circle at 30% 107%, #91e9ff 0%, #00ACEE 90%);
+}
+.box2:hover::before{
+    opacity: 1;
+}
+.box2:hover .icon .svg{
+    filter: drop-shadow(0 0 5px white);
+}
+.box3{
+    width: 30%;
+    height: 30%;
+    bottom: -30%;
+    left: -30%;
+    transition-delay: 0.4s;
+}
+.box3::before{
+    background: radial-gradient(circle at 30% 107%, #969fff 0%, #b349ff 90%);
+}
+.box3:hover::before{
+    opacity: 1;
+}
+.box3:hover .icon .svg{
+    filter: drop-shadow(0 0 5px white);
+}
+.box4{
+width: 10%;
+height: 10%;
+bottom: -10%;
+left: -10%;
+transition-delay: 0.6s;
+}
+.card:hover{
+    transform: scale(1,1);
+}
+.card:hover .box{
+    bottom: -1px;
+    left: -1px;
+}
+.card:hover .logo{
+    transform: translate(0  ,0);
+    bottom: 20px;
+    right: 20px;
+}
+
+  /*-----------------------------------*\
+    #RESET
+  \*-----------------------------------*/
+  
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  li { list-style: none;}
+
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
+  button{
+    font: inherit;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+  html{
+    font-family: 'Public Sans', sans-serif;
+    scroll-behavior: smooth;
+  }
+  img, span, svg{ display: block; }
+
+
+
+/*-----------------------------------*\
+ #MAIN
+\*-----------------------------------*/
+
+.container{
+    max-width: 1440px;
+    margin: auto;
+}
+
+/*-----------------------------------*\
+ #HEADER
+\*-----------------------------------*/
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.navbar{
+    background: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px var(--px);
+}
+.navbar-toggle-btn{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 20px;
+}
+.navbar-toggle-btn span{
+    display: block;
+    background: var(--dark-blue);
+    width: 25px;
+    height: 1px;
+    transition: 0.25s ease;
+}
+.navbar-nav { 
+    list-style: none; 
+    /* Remove default list styles */ 
+    padding: 0; /* Remove default padding */ 
+    display: flex; /* Use flexbox for horizontal alignment */
+     gap: 20px; /* Add space between the items */ 
+    }
+    /* Style for each list item */ 
+    .navbar-nav li { 
+        display: inline; /* Inline display for horizontal alignment */ 
+    } /* Style for the links */ 
+    .navbar-nav li a { 
+        text-decoration: none; /* Remove underline from links */ 
+        font-size: 18px; /* Set font size */ 
+        color: #333; /* Set text color */
+         padding: 10px; /* Add padding for better click area */
+          transition: color 0.3s; /* Smooth transition for color change */ 
+        } /* Add hover effect to change color when hovered */ 
+        .navbar-nav li a:hover { 
+            color: #ff6347; /* Change to a different color on hover (example: tomato) */ }
+.navbar-toggle-btn.active .one { transform: rotate(45deg) translateY(3px); }
+.navbar-toggle-btn.active .two { display: none;}
+.navbar-toggle-btn.active .three { transform: rotate(-45deg) translateY(-3px); }
+
+
+
+.navbar-nav a{
+    color: var(--dark-blue);
+    display: block;
+}
+.navbar-nav.active{
+    top: calc(60px*20px);
+    opacity: 1;
+    box-shadow: 0 0 100px hsla(233, 26%, 24%, 0.2);
+    pointer-events: all;
+}
+.btn-primary{
+    background: linear-gradient(98deg, var(--lime-green), var(--bright-cyan));
+    color: var(--white);
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 700;
+    display: block;
+    margin: auto;
+    transition: 0.25s ease;
+}
+.btn-primary:hover { opacity: 0.7;}
+
+.navbar .btn-primary{
+    display: none;
+}
+
+/*-----------------------------------*\
+ #HOME
+\*-----------------------------------*/
+
+main{
+    overflow: hidden;
+}
+.home{
+    background: var(--very-light-gray);
+    padding-bottom: 60px;
+}
+
+.home-title{
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--dark-blue);
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+.home-text {
+    margin: auto;
+    color: var(--grayish-blue);
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+#image{
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+}
+
+/*-----------------------------------*\
+ #SERVICE
+\*-----------------------------------*/
+
+.service{
+    padding: 60px var(--px);
+    background: var(--light-grayish-blue) ;
+}
+.section-title{
+    color: var(--dark-blue);
+    font-size: 32px;
+    font-weight: 400px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.section-text{
+    color: var(--grayish-blue);
+    font-size: 15px;
+    line-height: 1.7;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.service-card-group{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+.service-card{
+    text-align: center;
+}
+.service-card .card-icon {
+    margin: auto;
+    margin-bottom: 30px;
+}
+.service-card .card-title{
+    color: var(--dark-blue);
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.service-card .card-text {
+    font-size: 15px;
+    color: var(--grayish-blue);
+    line-height: 1.7;
+}
+/*-----------------------------------*\
+ #BLOG
+\*-----------------------------------*/
+.blog{
+    padding: 60px var(--px);
+    background: var(--very-light-gray);
+}
+.blog .section-title{
+    margin-bottom: 30px;
+}
+.article-card-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+.article-card{
+    border-radius: 5px;
+    background: var(--white);
+    overflow: hidden;
+}
+.article-card .card-head{
+    height: 200px;
+}
+.article-card .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.article-card .card-body{
+    padding: 20px;
+}
+.article-card .article-author{
+    font-size: 10px;
+    color: var(--grayish-blue);
+    margin-bottom: 10px;
+}
+.article-card .card-title {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+    transition: 0.25s ease;
+}
+.article-card .card-title:hover {
+    color: var(--lime-green);
+}
+.article-card .card-text {
+    font-size: 13px;
+    color: var(--grayish-blue);
+    line-height: 1.5;
+}
+
+/*-----------------------------------*\
+ #FOOTER
+\*-----------------------------------*/
+
+footer{
+    background: var(--dark-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px var(--px);
+}
+.footer-brand{
+    margin: auto;
+    margin-bottom: 30px;
+}
+.social-link{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+/* Style for the icons */
+a ion-icon {
+    font-size: 40px; /* Increase the size of the icons */
+    color: lightseagreen; /* Default color for the icons */
+    margin: 10px; /* Add some margin around the icons */
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+/* Add hover effect to change color when hovered */
+a ion-icon:hover {
+    color: #ff6347; /* Change to a different color on hover (example: tomato) */
+}
+
+/* Style for the navigation list */
+ul {
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Use flexbox for horizontal alignment */
+    gap: 20px; /* Add space between items */
+}
+
+/* Style for each list item */
+ul li {
+    display: inline; /* Inline display for horizontal alignment */
+}
+
+/* Style for the links */
+ul li a {
+    text-decoration: none; /* Remove underline from links */
+    font-size: 20px; /* Increase the font size */
+    color: #333; /* Set default text color */
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+/* Add hover effect to change color when hovered */
+ul li a:hover {
+    color: #ff6347; /* Change to a different color on hover (example: tomato) */
+}
+
+
+.social-link ion-icon{
+    color: var(--white);
+    font-size: 30px;
+    display: block;
+    transition: 0.25s ease;
+}
+.social-link ion-icon:hover {
+    color: var(--lime-green);
+}
+.footer-nav{
+    margin-bottom: 30px;
+}
+.footer-nav ul,
+.footer-nav ul li:not(:last-child){
+    margin-bottom: 15px;
+}
+.footer-nav a{
+    font-size: 15px;
+    transition: 0.25s ease;
+}
+.footer-nav a:hover {
+    color: var(--lime-green);
+}
+footer .btn-primary {
+    margin-bottom: 30px;
+}
+.copyright{
+    color: var(--grayish-blue);
+    font-size: 14px;
+}
+
+
+/*-----------------------------------*\
+ #RESPONSIVE
+\*-----------------------------------*/
+
+
+/*-----------------------------------*\
+ #AFTER DEVICE
+\*-----------------------------------*/
+@media (min-width: 768px){
+    :root { --px: 80px; }
+}
+
+/**
+* home
+*/
+.home-text {
+    font-size: 18px;
+    max-width: 600px;
+}
+
+/**
+* service
+*/
+.section-text{
+    font-size: 18px;
+    max-width: 400px;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.service-card-group {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/**
+*BLOG
+*/
+
+.blog .section-title{
+    margin-bottom: 50px;
+}
+.article-card-group{
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/*-----------------------------------*\
+ #FOR A LARGE DEVICE
+\*-----------------------------------*/
+@media (min-width: 1024px){
+
+/**
+* header
+*/
+
+header{
+    position: static;
+}
+.navbar {
+    padding: 0 var(--px);
+}
+.navbar-toggle-btn{
+    display: none;
+}
+.navbar-nav{
+    position: static;
+    padding: 0;
+    z-index: 0;
+    flex-direction: row;
+    gap: 30px;
+    opacity: 1;
+    pointer-events: all;
+}
+
+.navbar-nav a{
+    font-size: 15px;
+    color: var(--grayish-blue);
+    padding: 30px 0;
+    transition: 0.25s ease;
+}
+.navbar-nav a:hover{
+    color: var(--dark-blue);
+    box-shadow: inset 0 - 3px 0 var(--lime-green);
+}
+.navbar .btn-primary{
+    display: block;
+    margin: 0;
+}
+/**
+* home
+*/
+.home{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 0;
+}
+.home-img-box{
+    width: 500%;
+    background-size: 50%;
+    object-fit: cover;
+    margin: 1px;
+    padding: 0px;
+}
+.home-img-box .home-img{
+    width: 100%;
+    transform: translate(0px, -10px) scale(1,1);
+    aspect-ratio: unset;
+    margin-left: auto;
+    justify-content: flex-start;
+}
+.home .wrapper {
+    width: 45%;
+    padding-left: var(--px);
+}
+.home-title{
+    font-size: 55px;
+    text-align: left;
+    padding: 0;
+}
+.home-text {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 36px;
+    max-width: 450px;
+}
+.btn-primary{
+    margin: 0;
+}
+
+/**
+* service
+*/
+
+.service {
+    padding: 100px var(--px);
+}
+.section-title{
+    text-align: left;
+    font-size: 40px;
+}
+.section-text{
+    text-align: left;
+    max-width: 650px;
+    margin: 0;
+    margin-bottom: 80px;
+}
+.service-card-group {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+.service-card{
+    text-align: left;
+}
+.service-card .card-icon{
+    margin: 0;
+    margin-bottom: 30px;
+}
+.service-card .card-title{
+    font-size: 24px;
+}
+.service-card .card-text{
+    font-size: 16px;
+}
+
+/**
+* blog
+*/
+.blog{
+    padding: 100px var(--px);
+}
+.article-card-group{
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/**
+* footer
+*/
+
+footer{
+flex-direction: row;
+justify-content: space-between;
+text-align: left;
+padding: 50px var(--px);
+}
+
+footer .wrapper-flex {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+.footer-brand{
+    margin: 0;
+    margin-bottom: 50px;
+}
+.social-link{
+    gap: 12px;
+    margin-bottom: 0;
+}
+.social-link ion-icon{
+  margin-bottom: 0;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+.footer-nav ul{
+    margin-bottom: 0;
+}
+footer .btn-primary {
+    margin-left: auto;
+}
+
+/*-----------------------------------*\
+ #FOR A LAPTOP
+\*-----------------------------------*/
+
+@media (min-width: 1200px){
+    :root {--px: 160px; }
+}
+}

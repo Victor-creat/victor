@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard For Banking</title>
+
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+
+    <!-- Custom CSS link -->
+    <link rel="stylesheet" href="./css/dashboard.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./images/piggy-bank.png">
+
+    <!-- Google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="topbar">
+            <div class="logo">
+                <h2>Brand.</h2>
+            </div>
+            <div class="search">
+                <input type="text" id="search" placeholder="search here">
+                <label for="search"> <i class="fas fa-search"></i></label>
+            </div>
+            <i class="fas fa-bell"></i>
+            <div class="user">
+                <img src="images/man.png" alt="User Image">
+            </div>
+        </div>
+        <div class="sidebar">
+            <button id="close-sidebar" class="close-btn"> 
+                <i class="fas fa-times"></i> 
+            </button>
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-th-large"></i>
+                        <div>Dashboard</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://youtu.be/CCQwz_Gwo6o?feature=shared">
+                        <i class="fas fa-user-graduate"></i>
+                        <div>Client</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.sc.com/ke/employeebanking/">
+                        <i class="fas fa-users"></i>
+                        <div>Employees</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="login.html">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <div>login</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--Add A form-->
+    <div class="form-container">
+        <form id="amount-form">
+            <label for="account-number">Account Number:</label>
+            <input type="text" id="account-number" name="account-number" required>
+
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+
+            <button type="submit">Update Balance</button>
+        </form>
+        <form id="loan-form"> 
+            <label for="loan-account-number">Account Number:</label> 
+            <input type="text" id="loan-account-number" name="loan-account-number" required> 
+            <label for="loan-amount">Loan Amount:</label> 
+            <input type="number" id="loan-amount" name="loan-amount" required> 
+            <button type="submit">Take Loan</button> 
+        </form>
+
+    </div>
+
+    
+
+    <div class="main">
+        <div class="cards">
+            <div class="card">
+                <div class="card-content">
+                    <div class="number">1217</div>
+                    <div class="card-name">Clients</div>
+                </div>
+                <div class="icon-box">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="number">42</div>
+                    <div class="card-name">Manager</div>
+                </div>
+                <div class="icon-box">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="number">68</div>
+                    <div class="card-name">Employees</div>
+                </div>
+                <div class="icon-box">
+                    <i class="fas fa-users"></i>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="number">$4500</div>
+                    <div class="card-name">Earnings</div>
+                </div>
+                <div class="icon-box">
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+            </div>
+        </div>
+        <div class="charts">
+            <div class="chart">
+                <h2>Earnings (past 12 months)</h2>
+                <canvas id="lineChart"></canvas>
+            </div>
+            <div class="chart" id="doughnut-chart">
+                <h2>Employees</h2>
+                <canvas id="doughnut"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<canvas id="lineChart"></canvas> 
+<canvas id="doughnut"></canvas>
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+
+<!-- Custom JS link -->
+ <script src="js/dashboard.js"></script>
+ <script src="js/loan.js"></script>
+</body>
+</html>
